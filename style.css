@@ -1,6 +1,12 @@
-/* Premium Dark Theme */
-body {
+/* Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Background */
+body {
   background-color: #121212;
   font-family: 'Segoe UI', 'Roboto', sans-serif;
   color: #e0e0e0;
@@ -9,7 +15,20 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container {
@@ -21,16 +40,18 @@ body {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  animation: fadeIn 1.2s ease-out;
 }
 
 .title {
   font-size: 28px;
-  color: #d4af37; /* Gold */
+  color: #d4af37;
   margin-bottom: 25px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
+/* Input Date */
 input[type="date"] {
   width: 100%;
   padding: 12px;
@@ -41,33 +62,51 @@ input[type="date"] {
   margin-bottom: 25px;
   font-size: 16px;
   outline: none;
+  transition: all 0.3s ease;
 }
 
+input[type="date"]:hover,
+input[type="date"]:focus {
+  border-color: #d4af37;
+}
+
+/* Button */
 button {
-  background: linear-gradient(45deg, #1a1a1a, #333);
+  background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
   color: #d4af37;
   border: 1px solid #d4af37;
   padding: 12px 25px;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-weight: 500;
+  transition: all 0.4s ease;
 }
 
 button:hover {
   background: #d4af37;
   color: #121212;
+  box-shadow: 0 0 15px #d4af37;
   font-weight: bold;
 }
 
+/* Result Animation */
 .result {
   margin-top: 20px;
   font-size: 18px;
   color: #ccc;
   font-style: italic;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
 }
 
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
 .footer {
   margin-top: 30px;
   font-size: 14px;
