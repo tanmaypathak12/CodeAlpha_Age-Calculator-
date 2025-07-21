@@ -5,7 +5,9 @@ function calculateAge() {
   const result = document.getElementById("result");
 
   if (!dob) {
+    result.classList.remove("show");
     result.innerHTML = "❌ Please select your date of birth.";
+    result.classList.add("show");
     return;
   }
 
@@ -27,4 +29,7 @@ function calculateAge() {
   }
 
   result.innerHTML = `🎯 You are <strong>${years}</strong> years, <strong>${months}</strong> months, and <strong>${days}</strong> days old.`;
+  result.classList.remove("show");
+  void result.offsetWidth; // Force reflow
+  result.classList.add("show");
 }
