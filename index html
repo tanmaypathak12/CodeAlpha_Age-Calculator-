@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Age Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Age Calculator</h1>
+    <input type="date" id="dob" max="" />
+    <button onclick="calculateAge()">Calculate</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <footer class="footer">
+    <p>
+      Made by <strong>Tanmay Pathak</strong> • 
+      <a href="https://www.linkedin.com/in/tanmay-pathak-752b15331" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
